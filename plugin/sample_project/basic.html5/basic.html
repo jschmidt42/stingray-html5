@@ -1,0 +1,25 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="minimal-ui">
+    <title>Stingray HTML5 Basic</title>
+</head>
+
+<body style="background-color: #22BBAA;">
+<h1 id="title" style="color:whitesmoke">Stingray HTML5</h1>
+
+<h2 style="color:whitesmoke">Hold Mouse Right button to fly camera</h2>
+<h2 style="color:whitesmoke">Hold SHIFT to move faster</h2>
+
+<h2 style="color:whitesmoke"><img width=64 height=64 src="https://cdn0.iconfinder.com/data/icons/hand-gestures-vol-1/48/43-512.png">
+    On the left you have a web view serving an HTTP page.</h2>
+
+<script type="text/javascript">
+	let $title = document.getElementById('title');
+    $title.innerHTML = `Stingray HTML5 (${stingray.Application.platform()} - ${stingray.Application.build()}) [${stingray.Application.build_identifier()}]
+            </br>Serving <a href="${document.URL}">${document.URL}</a>`;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+source-templates = {
+	default = {
+		type = "url"
+	}
+}
+
+packages = {
+
+	// Plugin external dependencies
+
+	cef-win64-vc14 = {
+		groups = ["engine", "editor", "cef"]
+		platforms = ["win64"]
+		devenvs = ["vc14"]
+		lib = "cef-3.2924.1571-win64-vc14"
+		url = "https://autodesk.box.com/shared/static/d4opmussr3btzwwtax0251kr3w4q8b6l.zip"
+		version = "2caba32e9144e2dfd69d2b59e3f9b6da"
+	}
+
+	// Build system packages
+
+	stingray-plugin-sdk = {
+		groups = ["plugin", "sdk", "common"]
+		lib = "stingray-plugin-sdk-1.9"
+		url = "https://autodesk.box.com/shared/static/r7u0vopj5gszn7eihu14trgoqqspq2jq.zip"
+		version = "636831a4eaa31ef1dadffc62678d4001"
+	}
+
+	cmake = {
+		groups = ["plugin", "cmake", "common"]
+		lib = "cmake-3.7.0.rc3"
+		url = "https://draoqiiudbn5q.cloudfront.net/stingray-libs/cmake-3.7.0.rc3.zip"
+		version = "UfQV0Mx2bMvOpW7rQ4AE868lzAtPqP5g"
+	}
+}

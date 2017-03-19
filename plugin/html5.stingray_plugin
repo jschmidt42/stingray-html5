@@ -1,0 +1,84 @@
+// About
+//
+name = "HTML5"
+description = "Adds HTML5 support to Stingray Engine."
+version = "1.0.0"
+changelog = {
+    "1.0.0": "First version"
+}
+author = {
+    name = "Jonathan Schmidt"
+    email = "jschmidt42@gmail.com"
+    url = "https://github.com/jschmidt42/stingray-html5-plugin"
+}
+keywords = ["stingray", "html5", "engine", "plugin"]
+
+// Define plugin thumbnail
+thumbnail = "sample_project/thumbnail.png"
+
+// Extensions
+//
+extensions = {
+
+    resources = [
+        { path = "html5_resources" }
+    ]
+
+    actions = [
+        { name = "html5-run-application" type = "js" module = "html5-actions" function_name = "runApplication"}
+    ]
+
+    menus = [
+        { path = "HTML5" order = 15003 }
+        { path = "HTML5/Run" order = 10 action = "html5-run-application" }
+    ]
+
+    asset_types = [
+        {
+            type = "html5"
+            category = "HTML5"
+            icon = "sample_project/thumbnail.png"
+            name = "HTML5 Project"
+            description = "HTML5 Project"
+        }
+
+        {
+            type = "html"
+            category = "HTML5"
+            icon = "sample_project/thumbnail.png"
+            name = "HTML page"
+        }
+
+        {
+            type = "js"
+            category = "HTML5"
+            icon = "sample_project/thumbnail.png"
+            name = "JavaScript"
+        }
+    ]
+
+    runtime_libraries = [
+        {
+            name = "html5_plugin"
+            paths = {
+                win32 = {
+                    dev = "binaries/engine/win64/dev/html5_plugin_w64_dev.dll"
+                    debug = "binaries/engine/win64/debug/html5_plugin_w64_debug.dll"
+                    release = "binaries/engine/win64/release/html5_plugin_w64_release.dll"
+                }
+            }
+            bundled = true
+        }
+    ]
+
+    templates = [
+        { type = "project-template" path = "sample_project/sample.stingray_project" }
+    ]
+}
+
+// Dependencies
+//
+platforms = ["win64"]
+dependencies = {
+    "stingray" = ">=1.9.0"
+}

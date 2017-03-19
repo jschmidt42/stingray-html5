@@ -1,0 +1,117 @@
+
+shader = {
+	connections = [
+		{
+			destination = {
+				connector_id = "1ee9af1f-65f2-4739-ad28-5ea6a0e68fc3"
+				instance_id = "a7c670c6-c652-411c-9f81-2277eed7e220"
+			}
+			source = {
+				instance_id = "3a43eb17-b278-4592-a51e-f5b908d7c662"
+			}
+		}
+		{
+			destination = {
+				connector_id = "aca690cb-6305-4a2f-bf3d-69183a493db3"
+				instance_id = "138b9df6-c81b-4289-8b91-39952a4fe0e7"
+			}
+			select = [
+				"bgr"
+			]
+			source = {
+				instance_id = "a7c670c6-c652-411c-9f81-2277eed7e220"
+			}
+		}
+		{
+			destination = {
+				connector_id = "34259752-b962-4b65-92c3-903a57338519"
+				instance_id = "138b9df6-c81b-4289-8b91-39952a4fe0e7"
+			}
+			select = [
+				"a"
+			]
+			source = {
+				instance_id = "a7c670c6-c652-411c-9f81-2277eed7e220"
+			}
+		}
+	]
+	constants = [
+	]
+	groups = [
+	]
+	nodes = [
+		{
+			content_size = [
+				160
+				0
+			]
+			export = {
+			}
+			id = "3a43eb17-b278-4592-a51e-f5b908d7c662"
+			options = [
+			]
+			position = [
+				-400
+				140
+			]
+			samplers = {
+			}
+			type = "core/shader_nodes/texture_coordinate0"
+		}
+		{
+			content_size = [
+				160
+				0
+			]
+			export = {
+			}
+			id = "a7c670c6-c652-411c-9f81-2277eed7e220"
+			options = [
+				"5dd59b3d-1762-4a14-9930-7500230ef3db"
+				"43dea0e2-a77d-410d-88bb-945dac9139d8"
+				"e94e53e6-49b6-4194-a747-8f064a5932e0"
+			]
+			position = [
+				-180
+				140
+			]
+			samplers = {
+				texture_map = {
+					display_name = "HTML5"
+					slot_name = "html5_texture"
+					ui = {
+					}
+				}
+			}
+			title = "HTML5 Texture"
+			type = "core/shader_nodes/sample_texture"
+		}
+		{
+			content_size = [
+				160
+				0
+			]
+			export = {
+			}
+			id = "138b9df6-c81b-4289-8b91-39952a4fe0e7"
+			options = [
+				"c8d8b754-c567-4c7b-9cbd-8acab22beff5"
+				"774556cd-2d1e-4df8-8ae2-5e84800f0c04"
+				"435e14e4-556d-4ac1-af14-8dafe63aff8f"
+			]
+			position = [
+				40
+				160
+			]
+			samplers = {
+			}
+			type = "core/stingray_renderer/output_nodes/unlit_base"
+		}
+	]
+	version = 3
+}
+textures = {
+	html5_texture = null
+}
+variables = {
+}

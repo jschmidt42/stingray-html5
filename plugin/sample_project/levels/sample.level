@@ -1,0 +1,381 @@
+
+editor_metadata = {
+	Entities = [
+		{
+			id = "e656141d-a9c5-460b-b688-e442c49b985e"
+			inherit = {
+				"$resource_name" = "core/stingray_renderer/environments/midday/midday_shading_environment"
+				"$resource_type" = "entity"
+			}
+			layer = "Default"
+			name = "midday_shading_environment"
+		}
+	]
+	Flow = {
+		Connections = [
+		]
+		Groups = [
+		]
+		Nodes = [
+		]
+	}
+	Groups = [
+	]
+	Layers = [
+		"Default"
+		"Background"
+	]
+	LevelObjectSets = {
+		NestedSetNamesBySetName = {
+		}
+		ObjectIdsBySetName = {
+		}
+		VisibleSetNames = [
+		]
+	}
+	LevelReferences = [
+	]
+	LightBakeSettings = {
+		Baker = "Stingray"
+		DiffuseBoost = 1
+		EmissiveScaleRGB = {
+			X = 1
+			Y = 1
+			Z = 1
+		}
+		ExcludedObjectSets = [
+		]
+		FilterGain = 20
+		FilterLightmaps = true
+		FilterType = "Both"
+		IlluminationType = "Both"
+		IndirectScaleRGB = {
+			X = 1
+			Y = 1
+			Z = 1
+		}
+		Layers = [
+		]
+		LightmapType = "Standard"
+		MaxSamples = 16
+		MinSamples = 4
+		QualityPreset = "Low"
+		SkylightIntensityRGB = {
+			X = 1
+			Y = 1
+			Z = 1
+		}
+		TexelScale = 10
+		TotalPasses = 64
+		Variance = 0.5
+	}
+	Navmeshes = [
+	]
+	Notes = [
+	]
+	ParticleEffects = [
+	]
+	PositionMarkers = [
+	]
+	Prototypes = [
+	]
+	Scatter = {
+		PoolSettings = {
+		}
+		ScatterData = {
+		}
+	}
+	Settings = {
+		FrozenLayers = [
+			"Background"
+		]
+		HiddenLayers = [
+		]
+		HiddenObjects = [
+		]
+		LastHiddenObjects = [
+		]
+		SoundEnvironment = ""
+		TimpaniSoundEnvironment = "default"
+	}
+	Sounds = [
+	]
+	Splines = [
+	]
+	Stories = [
+	]
+	Triggers = [
+	]
+	Units = [
+		{
+			Cameras = {
+			}
+			Id = "62b73db4-dd05-4f5c-bc9d-0dc9e1c02217"
+			Layer = "Background"
+			Lights = {
+			}
+			Materials = {
+			}
+			Name = "Skydome"
+			OverridePoses = {
+			}
+			Pivot = {
+				X = 0
+				Y = 0
+				Z = 0
+			}
+			Pos = {
+				X = 0
+				Y = 0
+				Z = 0
+			}
+			Rot = {
+				W = 1
+				X = 0
+				Y = 0
+				Z = 0
+			}
+			Scl = {
+				X = 1
+				Y = 1
+				Z = 1
+			}
+			ScriptData = {
+			}
+			Type = "core/editor_slave/units/skydome/skydome"
+		}
+		{
+			Cameras = {
+			}
+			Id = "3e5c9e84-5176-4c22-bd43-563b4b3532d3"
+			Layer = "Default"
+			Lights = {
+			}
+			Materials = {
+			}
+			Name = "plane_primitive"
+			OverridePoses = {
+			}
+			Pivot = {
+				X = 0
+				Y = 0
+				Z = 0
+			}
+			Pos = {
+				X = 0
+				Y = 0
+				Z = 0
+			}
+			Rot = {
+				W = -1
+				X = 0
+				Y = 0
+				Z = 0
+			}
+			Scl = {
+				X = 500
+				Y = 500
+				Z = 1
+			}
+			ScriptData = {
+			}
+			Type = "core/units/primitives/plane_primitive"
+		}
+		{
+			Cameras = {
+			}
+			Id = "4516693d-5afa-4c47-8a02-190cadaf1c23"
+			Layer = "Default"
+			Lights = {
+			}
+			Materials = {
+			}
+			Name = "stingray_web_browser"
+			OverridePoses = {
+			}
+			Pivot = {
+				X = 0
+				Y = 0
+				Z = 0
+			}
+			Pos = {
+				X = -2.49792909622192
+				Y = 7.51559257507324
+				Z = 4.64934730529785
+			}
+			Rot = {
+				W = -1
+				X = 0
+				Y = 0
+				Z = 0
+			}
+			Scl = {
+				X = 1
+				Y = 1
+				Z = 1
+			}
+			ScriptData = {
+				browser_material_slot_name = "html5_texture"
+				browser_url = "http://www.autodesk.com/products/stingray/overview"
+			}
+			Type = "html5_resources/browser"
+		}
+		{
+			Cameras = {
+			}
+			Id = "f6df310d-6ccb-4d6c-a07a-e74cd606772a"
+			Layer = "Default"
+			Lights = {
+			}
+			Materials = {
+			}
+			Name = "basic_web_browser"
+			OverridePoses = {
+			}
+			Pivot = {
+				X = 0
+				Y = 0
+				Z = 0
+			}
+			Pos = {
+				X = 2.9428825378418
+				Y = 7.51559257507324
+				Z = 4.70011472702026
+			}
+			Rot = {
+				W = -1
+				X = 0
+				Y = 0
+				Z = 0
+			}
+			Scl = {
+				X = 1
+				Y = 1
+				Z = 1
+			}
+			ScriptData = {
+				browser_material_slot_name = "html5_texture"
+				browser_url = "stingray://basic/basic.html"
+			}
+			Type = "html5_resources/browser"
+		}
+	]
+	Volumes = [
+	]
+}
+entities = [
+	{
+		id = "e656141d-a9c5-460b-b688-e442c49b985e"
+		inherit = {
+			"$resource_name" = "core/stingray_renderer/environments/midday/midday_shading_environment"
+			"$resource_type" = "entity"
+		}
+		name = "midday_shading_environment"
+	}
+]
+entity_version = "0.2.0"
+flow = {
+	nodes = [
+	]
+}
+level_references = [
+]
+level_settings = {
+	num_background_units = 0
+	sound_environment = ""
+	timpani_sound_environment = "default"
+}
+navmeshes = [
+]
+object_sets = {
+}
+particle_effects = [
+]
+prototypes = [
+]
+scatter = [
+]
+sounds = [
+]
+splines = [
+]
+stories = [
+]
+triggers = [
+]
+units = [
+	{
+		cameras = {
+		}
+		data = {
+		}
+		id = "62b73db4-dd05-4f5c-bc9d-0dc9e1c02217"
+		lights = {
+		}
+		material = ""
+		materials = {
+		}
+		name = "Skydome"
+		pos = [0 0 0]
+		rot = [0 0 0 1]
+		scl = [1 1 1]
+		type = "core/editor_slave/units/skydome/skydome"
+	}
+	{
+		cameras = {
+		}
+		data = {
+		}
+		id = "3e5c9e84-5176-4c22-bd43-563b4b3532d3"
+		lights = {
+		}
+		material = ""
+		materials = {
+		}
+		name = "plane_primitive"
+		pos = [0 0 0]
+		rot = [0 0 0 -1]
+		scl = [500 500 1]
+		type = "core/units/primitives/plane_primitive"
+	}
+	{
+		cameras = {
+		}
+		data = {
+			browser_material_slot_name = "html5_texture"
+			browser_url = "http://www.autodesk.com/products/stingray/overview"
+		}
+		id = "4516693d-5afa-4c47-8a02-190cadaf1c23"
+		lights = {
+		}
+		material = ""
+		materials = {
+		}
+		name = "stingray_web_browser"
+		pos = [-2.49792909622192 7.51559257507324 4.64934730529785]
+		rot = [0 0 0 -1]
+		scl = [1 1 1]
+		type = "html5_resources/browser"
+	}
+	{
+		cameras = {
+		}
+		data = {
+			browser_material_slot_name = "html5_texture"
+			browser_url = "stingray://basic/basic.html"
+		}
+		id = "f6df310d-6ccb-4d6c-a07a-e74cd606772a"
+		lights = {
+		}
+		material = ""
+		materials = {
+		}
+		name = "basic_web_browser"
+		pos = [2.9428825378418 7.51559257507324 4.70011472702026]
+		rot = [0 0 0 -1]
+		scl = [1 1 1]
+		type = "html5_resources/browser"
+	}
+]
+volumes = [
+]

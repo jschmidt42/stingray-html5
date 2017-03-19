@@ -1,0 +1,113 @@
+
+shader = {
+	connections = [
+		{
+			destination = {
+				connector_id = "1ee9af1f-65f2-4739-ad28-5ea6a0e68fc3"
+				instance_id = "d685450d-3b6b-4c4c-a131-f504b8210eb3"
+			}
+			source = {
+				instance_id = "66aa2952-9264-4887-a9a6-8119eaa489c4"
+			}
+		}
+		{
+			destination = {
+				connector_id = "aca690cb-6305-4a2f-bf3d-69183a493db3"
+				instance_id = "d409fd20-64ca-4250-b1c9-b98e409d11f6"
+			}
+			select = [
+				"bgr"
+			]
+			source = {
+				instance_id = "d685450d-3b6b-4c4c-a131-f504b8210eb3"
+			}
+		}
+		{
+			destination = {
+				connector_id = "c5823c75-4ae5-4c71-b070-315fa4d03e8e"
+				instance_id = "66aa2952-9264-4887-a9a6-8119eaa489c4"
+			}
+			source = {
+				instance_id = "a464c282-44a3-40ee-a808-8d9541b6ad70"
+			}
+		}
+	]
+	constants = [
+		{
+			connector_id = "242d1648-a626-445b-9534-bccec094112f"
+			id = "0ad94306-5d87-426e-9898-33f34a0b4c1a"
+			instance_id = "66aa2952-9264-4887-a9a6-8119eaa489c4"
+			value = [-1 1]
+		}
+	]
+	groups = [
+	]
+	nodes = [
+		{
+			content_size = [160 0]
+			export = {
+			}
+			id = "a464c282-44a3-40ee-a808-8d9541b6ad70"
+			options = [
+			]
+			position = [-500 420]
+			samplers = {
+			}
+			type = "core/shader_nodes/texture_coordinate0"
+		}
+		{
+			content_size = [160 0]
+			export = {
+			}
+			id = "66aa2952-9264-4887-a9a6-8119eaa489c4"
+			options = [
+			]
+			position = [-220 420]
+			samplers = {
+			}
+			type = "core/shader_nodes/mul"
+		}
+		{
+			content_size = [160 0]
+			export = {
+			}
+			id = "d409fd20-64ca-4250-b1c9-b98e409d11f6"
+			options = [
+				"c8d8b754-c567-4c7b-9cbd-8acab22beff5"
+			]
+			position = [340 360]
+			samplers = {
+			}
+			title = "browser"
+			type = "core/stingray_renderer/output_nodes/unlit_base"
+		}
+		{
+			content_size = [160 0]
+			export = {
+			}
+			id = "d685450d-3b6b-4c4c-a131-f504b8210eb3"
+			options = [
+				"fb3f709b-a54a-4e93-ac9f-e9fc76fb8bcd"
+				"5dd59b3d-1762-4a14-9930-7500230ef3db"
+				"1e067464-12d8-4826-9b72-cfd5765003e3"
+			]
+			position = [60 380]
+			samplers = {
+				texture_map = {
+					display_name = "Texture"
+					slot_name = "html5_texture"
+					ui = {
+					}
+				}
+			}
+			title = "browser texture"
+			type = "core/shader_nodes/sample_texture"
+		}
+	]
+	version = 3
+}
+textures = {
+	html5_texture = null
+}
+variables = {
+}

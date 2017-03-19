@@ -1,0 +1,61 @@
+data = {
+    browser_url = ""
+    browser_mesh_index = 1
+    browser_material_slot_name = "browser"
+}
+editor_metadata = {
+    data_ui = {
+        categories = {
+            browser_settings = {
+                label = "Browser Settings"
+                order = 80
+            }
+        }
+        controls = {
+            browser_url = {
+                category = "browser_settings"
+                label = "URL"
+                order = 1
+                type = "string"
+            }
+            browser_mesh_index = {
+                category = "browser_settings"
+                label = "Mesh index"
+                order = 2
+                type = "number"
+            }
+            browser_material_slot_name = {
+                category = "browser_settings"
+                label = "Material Slot Name"
+                order = 3
+                type = "string"
+            }
+        }
+    }
+}
+materials = {
+	frame = "html5_resources/frame"
+	screen = "html5_resources/screen"
+}
+renderables = {
+	frame_mesh = {
+		always_keep = false
+		culling = "bounding_volume"
+		generate_uv_unwrap = false
+		light_baking = "none"
+		occluder = false
+		shadow_caster = true
+		surface_queries = false
+		viewport_visible = true
+	}
+	screen_mesh = {
+		always_keep = false
+		culling = "bounding_volume"
+		generate_uv_unwrap = false
+		light_baking = "none"
+		occluder = false
+		shadow_caster = true
+		surface_queries = false
+		viewport_visible = true
+	}
+}

@@ -1,0 +1,61 @@
+
+parent_material = "core/stingray_renderer/shader_import/standard"
+textures = {
+	brdf_lut = "core/stingray_renderer/lookup_tables/ibl_brdf_lut"
+	global_diffuse_cube = "core/stingray_renderer/environments/midday/diffuse_cube"
+	global_specular_cube = "core/stingray_renderer/environments/midday/specular_cube"
+}
+variables = {
+	base_color = {
+		type = "vector3"
+		value = [0.045 0.045 0.045]
+	}
+	emissive = {
+		type = "vector3"
+		value = [0 0 0]
+	}
+	emissive_intensity = {
+		type = "scalar"
+		value = 0
+	}
+	metallic = {
+		type = "scalar"
+		value = 0
+	}
+	roughness = {
+		type = "scalar"
+		value = 0.2
+	}
+	use_ao_map = {
+		type = "scalar"
+		value = 0
+	}
+	use_color_map = {
+		type = "scalar"
+		value = 0
+	}
+	use_emissive_map = {
+		type = "scalar"
+		value = 0
+	}
+	use_metallic_map = {
+		type = "scalar"
+		value = 0
+	}
+	use_normal_map = {
+		type = "scalar"
+		value = 0
+	}
+	use_roughness_map = {
+		type = "scalar"
+		value = 0
+	}
+	uv_offset = {
+		type = "vector2"
+		value = [0 0]
+	}
+	uv_scale = {
+		type = "vector2"
+		value = [1 1]
+	}
+}

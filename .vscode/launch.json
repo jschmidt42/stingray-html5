@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Dev Tools",
+            "type": "chrome",
+            "request": "attach",
+            "port": 9089,
+            //"url": "stingray://app/main.html",
+            "url": "file:///G:/html5_plugin/plugin/sample_project/app.html5/main.local.html",
+            "webRoot": "${workspaceRoot}"
+        }
+    ]
+}

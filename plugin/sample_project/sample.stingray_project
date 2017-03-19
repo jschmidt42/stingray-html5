@@ -1,0 +1,19 @@
+
+data_directory = "../../build/sample_project_data"
+default_startup_level = "levels/sample"
+description = "Create a sample project that demonstrates the usages of the Stingray HTML5 plugin."
+libraries = {
+}
+migrations = {
+	"asset-browser" = {
+		patches = [
+			"replace-fbxasc"
+		]
+		version = "1.8.0"
+	}
+}
+name = "HTML5"
+reverse_forward_axis = true
+source_directory = "./"
+thumbnail = "thumbnail.png"
+version = "1.9.0.0"
