@@ -22,39 +22,22 @@ extensions = {
 
     resources = [
         { path = "html5_resources" }
+        { path = "html5_examples" }
     ]
 
     actions = [
-        { name = "html5-run-application" type = "js" module = "html5-actions" function_name = "runApplication"}
+        { name = "html5-example-hud" type = "js" module = "html5-examples" function_name = "showHud"}
     ]
 
     menus = [
         { path = "HTML5" order = 15003 }
-        { path = "HTML5/Run" order = 10 action = "html5-run-application" }
+        { path = "HTML5/Example HUD" order = 10 action = "html5-example-hud" }
     ]
 
     asset_types = [
-        {
-            type = "html5"
-            category = "HTML5"
-            icon = "sample_project/thumbnail.png"
-            name = "HTML5 Project"
-            description = "HTML5 Project"
-        }
-
-        {
-            type = "html"
-            category = "HTML5"
-            icon = "sample_project/thumbnail.png"
-            name = "HTML page"
-        }
-
-        {
-            type = "js"
-            category = "HTML5"
-            icon = "sample_project/thumbnail.png"
-            name = "JavaScript"
-        }
+        { type = "html5" category = "HTML5" icon = "sample_project/thumbnail.png" name = "HTML5 Project" description = "HTML5 Project" }
+        { type = "html" category = "HTML5" icon = "sample_project/thumbnail.png" name = "HTML page" }
+        { type = "js" category = "HTML5" icon = "sample_project/thumbnail.png" name = "JavaScript" }
     ]
 
     runtime_libraries = [
