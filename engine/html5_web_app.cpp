@@ -68,7 +68,7 @@ CefRefPtr<WebApp> WebApp::init()
 	settings.windowless_rendering_enabled = true;
 	settings.single_process = true;
 	settings.no_sandbox = true;
-	#ifdef _DEBUG
+	#if defined(DEVELOPMENT)
 		settings.remote_debugging_port = 9089;
 	#endif
 

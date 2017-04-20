@@ -27,6 +27,7 @@
         "**/packages": true,
         "**/build": true,
         "**/binaries": true,
-        "**/node_modules": true
+        "**/node_modules": true,
+        "**/.stingray-asset-server-directory": true
     }
 }
