@@ -29,6 +29,7 @@ void bind_api_unit(CefRefPtr<CefV8Value> stingray_ns, const UnitCApi* api);
 void bind_api_camera(CefRefPtr<CefV8Value> stingray_ns, const CameraCApi* api);
 void bind_api_window(CefRefPtr<CefV8Value> stingray_ns, const WindowCApi* api);
 void bind_api_level(CefRefPtr<CefV8Value> stingray_ns, const LevelCApi* api);
+void bind_api_gui(CefRefPtr<CefV8Value> stingray_ns, const GuiCApi* api);
 void bind_api_fs(CefRefPtr<CefV8Value> stingray_ns);
 
 }

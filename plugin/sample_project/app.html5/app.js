@@ -16,9 +16,11 @@ define(require => {
     const Mouse = stingray.Mouse;
     const Keyboard = stingray.Keyboard;
     const Vector3 = stingray.Vector3;
+	const Vector2 = stingray.Vector2;
     const Quaternion = stingray.Quaternion;
     const Matrix4x4 = stingray.Matrix4x4;
     const WebView = stingray.WebView;
+	const Gui     = stingray.Gui;
 
     /*
      * Store application resources and states.
@@ -29,6 +31,9 @@ define(require => {
         world: null,
         viewport: null,
         gui: null,
+		overlay_gui: null,
+		overlay_view: null,
+		overlay_material: null,
         camera: {
             name: 'core/appkit/units/camera/camera',
             unit: null,
@@ -45,7 +50,8 @@ define(require => {
             click: null
         }
     };
-
+	let web_page_url = "http://www.google.com"
+	let web_view_material_resource_name = "html5_resources/web_view_2d"
     const Button = {
         Mouse: {
             left: Mouse.button_id("left"),
@@ -104,8 +110,14 @@ define(require => {
 
         app.gui = World.create_screen_gui(app.world, null, null, false, true, true, true);
         console.assert(app.gui, 'Failed to create gui');
-
+		app.overlay_gui = World.create_screen_gui(app.world, null, null, true, true, true);
+		console.assert(app.overlay_gui, 'Failed to create overlay');
         console.info('World created');
+
+		app.overlay_material = Gui.material(app.overlay_gui, web_view_material_resource_name)
+		console.info('Overlay material created');
+		app.overlay_view = WebView.create(web_page_url, app.window, app.overlay_material)
+		console.info('Webview: ' + web_page_url);
     }
 
     /**
@@ -325,6 +337,9 @@ define(require => {
     function render() {
         if (app.closing)
             return;
+		let res = Gui.resolution(app.viewport, app.window);
+		Gui.bitmap(app.overlay_gui, app.overlay_material,
+				   Vector2.create(0,0), 0, Vector2.create(res[0],res[1]))
         Application.render_world(app.world, app.camera.instance, app.viewport, app.shading_environment, app.window);
     }
 
@@ -332,6 +347,7 @@ define(require => {
      * Shutdown web app.
      */
     function shutdown() {
+		WebView.destroy(app.overlay_view);
         Application.release_world(app.world);
         return quit();
     }

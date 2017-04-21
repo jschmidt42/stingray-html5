@@ -491,6 +491,7 @@ DEFINE_GET_ARG_STRUCT(CApiWindow *)
 DEFINE_GET_ARG_STRUCT(CApiWorldConfig *)
 DEFINE_GET_ARG_STRUCT(CApiMover *)
 DEFINE_GET_ARG_STRUCT(CApiMaterialData *)
+DEFINE_GET_ARG_STRUCT(CApiMaterial *)
 DEFINE_GET_ARG_STRUCT(AnimationEventParameters *)
 DEFINE_GET_ARG_STRUCT(AnimationStates *)
 DEFINE_GET_ARG_STRUCT(AnimationLayerSeeds *)
@@ -543,6 +544,14 @@ inline void wrap_result(const CApiVector3* v, CefRefPtr<CefV8Value>& retval)
 	retval->SetValue(1, CefV8Value::CreateDouble(v->y));
 	retval->SetValue(2, CefV8Value::CreateDouble(v->z));
 }
+
+inline void wrap_result(const CApiVector2* v, CefRefPtr<CefV8Value>& retval)
+{
+	retval = CefV8Value::CreateArray(2);
+	retval->SetValue(0, CefV8Value::CreateDouble(v->x));
+	retval->SetValue(1, CefV8Value::CreateDouble(v->y));
+}
+
 inline void wrap_result(const Matrix4x4& m, CefRefPtr<CefV8Value>& retval)
 {
 	retval = CefV8Value::CreateArray(16);
@@ -560,6 +569,12 @@ inline void wrap_result(const CApiVector3& v, CefRefPtr<CefV8Value>& retval)
 	retval->SetValue(0, CefV8Value::CreateDouble(v.x));
 	retval->SetValue(1, CefV8Value::CreateDouble(v.y));
 	retval->SetValue(2, CefV8Value::CreateDouble(v.z));
+}
+inline void wrap_result(const CApiVector2& v, CefRefPtr<CefV8Value>& retval)
+{
+	retval = CefV8Value::CreateArray(2);
+	retval->SetValue(0, CefV8Value::CreateDouble(v.x));
+	retval->SetValue(1, CefV8Value::CreateDouble(v.y));
 }
 inline void wrap_result(const CApiQuaternion& q, CefRefPtr<CefV8Value>& retval)
 {
