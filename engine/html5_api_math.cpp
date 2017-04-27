@@ -125,7 +125,7 @@ void bind_api_vector2(CefRefPtr<CefV8Value> stingray_ns)
 	bind_api(ns, "dot", [](const CefV8ValueList& args)
 	{
 		CefRefPtr<CefV8Value> retval;
-		wrap_result(dot(get_arg<Vector3>(args, 0), get_arg<Vector3>(args, 1)), retval);
+		wrap_result(dot(get_arg<Vector2>(args, 0), get_arg<Vector2>(args, 1)), retval);
 		return retval;
 	});
 	stingray_ns->SetValue("Vector2", ns, V8_PROPERTY_ATTRIBUTE_READONLY);
