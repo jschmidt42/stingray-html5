@@ -34,6 +34,7 @@ define(require => {
 		overlay_gui: null,
 		overlay_view: null,
 		overlay_material: null,
+		overlay_bitmap: null,
         camera: {
             name: 'core/appkit/units/camera/camera',
             unit: null,
@@ -110,7 +111,7 @@ define(require => {
 
         app.gui = World.create_screen_gui(app.world, null, null, false, true, true, true);
         console.assert(app.gui, 'Failed to create gui');
-		app.overlay_gui = World.create_screen_gui(app.world, null, null, true, true, true);
+		app.overlay_gui = World.create_screen_gui(app.world, null, null, true, true, true, true);
 		console.assert(app.overlay_gui, 'Failed to create overlay');
         console.info('World created');
 
@@ -118,6 +119,11 @@ define(require => {
 		console.info('Overlay material created');
 		app.overlay_view = WebView.create(web_page_url, app.window, app.overlay_material)
 		console.info('Webview: ' + web_page_url);
+
+		let res = Gui.resolution(app.viewport, app.window);
+		app.overlay_bitmap = Gui.bitmap(app.overlay_gui, app.overlay_material,
+										Vector2.create(0,0), 10,
+										Vector2.create(res[0],res[1]))
     }
 
     /**
@@ -338,8 +344,9 @@ define(require => {
         if (app.closing)
             return;
 		let res = Gui.resolution(app.viewport, app.window);
-		Gui.bitmap(app.overlay_gui, app.overlay_material,
-				   Vector2.create(0,0), 0, Vector2.create(res[0],res[1]))
+		WebView.render(app.overlay_view);
+		Gui.update_bitmap(app.overlay_gui, app.overlay_bitmap, app.overlay_material,
+						  Vector2.create(0,0), 10, Vector2.create(res[0],res[1]))
         Application.render_world(app.world, app.camera.instance, app.viewport, app.shading_environment, app.window);
     }
 
@@ -347,6 +354,7 @@ define(require => {
      * Shutdown web app.
      */
     function shutdown() {
+		Gui.destroy_bitmap(app.overlay_gui, app.overlay_bitmap);
 		WebView.destroy(app.overlay_view);
         Application.release_world(app.world);
         return quit();

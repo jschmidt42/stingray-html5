@@ -9,8 +9,25 @@ void bind_api_gui(CefRefPtr<CefV8Value> stingray_ns, const GuiCApi* api)
 
 	BIND_API(material);
 	BIND_API(create_material);
-	BIND_API(bitmap);
 
+	// Bitmap support
+	//
+	BIND_API(bitmap);
+	BIND_API(destroy_bitmap);
+	bind_api(ns, "update_bitmap", [](const CefV8ValueList& args)
+	{
+		stingray::api::script->Gui->update_bitmap(
+			get_arg<GuiPtr>(args,0),
+			get_arg<unsigned>(args,1),
+			get_arg<MaterialPtr>(args,2),
+			get_arg<ConstVector2Ptr>(args,3),
+			get_arg<unsigned>(args,4),
+			get_arg<ConstVector2Ptr>(args,5),
+			get_arg<ConstVector4Ptr>(args,6),
+			get_arg<ConstVector2Ptr>(args,7),
+			get_arg<ConstVector2Ptr>(args,8) );
+		return CefV8Value::CreateUndefined();
+	});
 	bind_api(ns, "resolution", [](const CefV8ValueList &args)
     {
 		unsigned int out_width;
@@ -35,10 +52,6 @@ void bind_api_gui(CefRefPtr<CefV8Value> stingray_ns, const GuiCApi* api)
 	BIND_API(rect_3d);
 	BIND_API(update_rect_3d);
 	BIND_API(destroy_rect_3d);
-
-
-	BIND_API(update_bitmap);
-	BIND_API(destroy_bitmap);
 
 	BIND_API(bitmap_3d);
 	BIND_API(update_bitmap_3d);
