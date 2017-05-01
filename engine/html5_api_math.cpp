@@ -2,6 +2,7 @@
 
 #include <plugin_foundation/matrix4x4.h>
 #include <plugin_foundation/quaternion.h>
+#include <plugin_foundation/vector4.h>
 #include <plugin_foundation/vector2.h>
 
 namespace PLUGIN_NAMESPACE {
@@ -193,6 +194,77 @@ void bind_api_vector3(CefRefPtr<CefV8Value> stingray_ns)
 	stingray_ns->SetValue("Vector3", ns, V8_PROPERTY_ATTRIBUTE_READONLY);
 }
 
+void bind_api_vector4(CefRefPtr<CefV8Value> stingray_ns)
+{
+	CefRefPtr<CefV8Value> ns = CefV8Value::CreateObject(nullptr, nullptr);
+
+	bind_api(ns, "zero", [](const CefV8ValueList& args)
+	{
+		CefRefPtr<CefV8Value> retval;
+		wrap_result(vector4(0,0,0,0), retval);
+		return retval;
+	});
+
+	bind_api(ns, "create", [](const CefV8ValueList& args)
+	{
+		CefRefPtr<CefV8Value> retval;
+		float v1 = get_arg<float>(args, 0);
+		float v2 = get_arg<float>(args, 1);
+		float v3 = get_arg<float>(args, 2);
+		float v4 = get_arg<float>(args, 3);
+		wrap_result(vector4(v1,v2,v3,v4), retval);
+		return retval;
+	});
+
+	bind_api(ns, "equal", [](const CefV8ValueList& args)
+	{
+		return CefV8Value::CreateBool(get_arg<Vector4>(args, 0) == get_arg<Vector4>(args, 1));
+	});
+
+	bind_api(ns, "normalize", [](const CefV8ValueList& args)
+	{
+		const Vector4& nv = normalize(get_arg<Vector4>(args, 0));
+		CefRefPtr<CefV8Value> retval;
+		wrap_result(nv, retval);
+		return retval;
+	});
+
+	bind_api(ns, "add", [](const CefV8ValueList& args)
+	{
+		CefRefPtr<CefV8Value> retval;
+		wrap_result(get_arg<Vector4>(args, 0) + get_arg<Vector4>(args, 1), retval);
+		return retval;
+	});
+
+	bind_api(ns, "subtract", [](const CefV8ValueList& args)
+	{
+		CefRefPtr<CefV8Value> retval;
+		wrap_result(get_arg<Vector4>(args, 0) - get_arg<Vector4>(args, 1), retval);
+		return retval;
+	});
+
+	bind_api(ns, "multiply", [](const CefV8ValueList& args)
+	{
+		CefRefPtr<CefV8Value> retval;
+		wrap_result(get_arg<Vector4>(args, 0) * get_arg<float>(args, 1), retval);
+		return retval;
+	});
+
+	bind_api(ns, "multiply_elements", [](const CefV8ValueList& args)
+	{
+		CefRefPtr<CefV8Value> retval;
+		wrap_result(get_arg<Vector4>(args, 0) * get_arg<Vector4>(args, 1), retval);
+		return retval;
+	});
+	bind_api(ns, "dot", [](const CefV8ValueList& args)
+	{
+		CefRefPtr<CefV8Value> retval;
+		wrap_result(dot(get_arg<Vector4>(args, 0), get_arg<Vector4>(args, 1)), retval);
+		return retval;
+	});
+	stingray_ns->SetValue("Vector4", ns, V8_PROPERTY_ATTRIBUTE_READONLY);
+}
+
 void bind_api_quaternion(CefRefPtr<CefV8Value> stingray_ns)
 {
 	CefRefPtr<CefV8Value> ns = CefV8Value::CreateObject(nullptr, nullptr);
@@ -246,6 +318,7 @@ void bind_api_math(CefRefPtr<CefV8Value> stingray_ns)
 {
 	bind_api_vector2(stingray_ns);
 	bind_api_vector3(stingray_ns);
+	bind_api_vector4(stingray_ns);
 	bind_api_quaternion(stingray_ns);
 	bind_api_matrix4x4(stingray_ns);
 }

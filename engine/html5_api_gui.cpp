@@ -10,6 +10,11 @@ void bind_api_gui(CefRefPtr<CefV8Value> stingray_ns, const GuiCApi* api)
 	BIND_API(material);
 	BIND_API(create_material);
 
+	// Rect support
+	BIND_API(rect);
+	BIND_API(update_rect);
+	BIND_API(destroy_rect);
+
 	// Bitmap support
 	//
 	BIND_API(bitmap);
@@ -45,9 +50,6 @@ void bind_api_gui(CefRefPtr<CefV8Value> stingray_ns, const GuiCApi* api)
 	BIND_API(triangle);
 	BIND_API(update_triangle);
 	BIND_API(destroy_triangle);
-	BIND_API(rect);
-	BIND_API(update_rect);
-	BIND_API(destroy_rect);
 
 	BIND_API(rect_3d);
 	BIND_API(update_rect_3d);

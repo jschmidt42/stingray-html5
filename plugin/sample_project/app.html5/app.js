@@ -15,12 +15,16 @@ define(require => {
     const Camera = stingray.Camera;
     const Mouse = stingray.Mouse;
     const Keyboard = stingray.Keyboard;
+	const Vector4 = stingray.Vector4;
     const Vector3 = stingray.Vector3;
 	const Vector2 = stingray.Vector2;
     const Quaternion = stingray.Quaternion;
     const Matrix4x4 = stingray.Matrix4x4;
     const WebView = stingray.WebView;
 	const Gui     = stingray.Gui;
+
+	const test_webview_2d = false;
+	const test_rect = false;
 
     /*
      * Store application resources and states.
@@ -35,6 +39,7 @@ define(require => {
 		overlay_view: null,
 		overlay_material: null,
 		overlay_bitmap: null,
+		overlay_rect: null,
         camera: {
             name: 'core/appkit/units/camera/camera',
             unit: null,
@@ -111,19 +116,28 @@ define(require => {
 
         app.gui = World.create_screen_gui(app.world, null, null, false, true, true, true);
         console.assert(app.gui, 'Failed to create gui');
-		app.overlay_gui = World.create_screen_gui(app.world, null, null, true, true, true, true);
+		app.overlay_gui = World.create_screen_gui(app.world, null, null, false, false, false, false);
 		console.assert(app.overlay_gui, 'Failed to create overlay');
         console.info('World created');
 
-		app.overlay_material = Gui.material(app.overlay_gui, web_view_material_resource_name)
-		console.info('Overlay material created');
-		app.overlay_view = WebView.create(web_page_url, app.window, app.overlay_material)
-		console.info('Webview: ' + web_page_url);
+		if ( test_webview_2d ) {
+			app.overlay_material = Gui.material(app.overlay_gui, web_view_material_resource_name)
+			console.info('Overlay material created');
+			app.overlay_view = WebView.create(web_page_url, app.window, app.overlay_material)
+			console.info('Webview: ' + web_page_url);
+		}
 
 		let res = Gui.resolution(app.viewport, app.window);
-		app.overlay_bitmap = Gui.bitmap(app.overlay_gui, app.overlay_material,
-										Vector2.create(0,0), 10,
-										Vector2.create(res[0],res[1]))
+		if ( test_rect ) {
+			app.overlay_rect = Gui.rect(app.overlay_gui,
+										Vector2.create(0,0), 2,
+										Vector2.create(res[0],res[1]),
+										Vector4.create(255,255,255,255))
+		} else if ( test_webview_2d ) {
+			app.overlay_bitmap = Gui.bitmap(app.overlay_gui, app.overlay_material,
+											Vector2.create(0,0), 2,
+											Vector2.create(res[0],res[1]))
+		}
     }
 
     /**
@@ -344,9 +358,19 @@ define(require => {
         if (app.closing)
             return;
 		let res = Gui.resolution(app.viewport, app.window);
-		WebView.render(app.overlay_view);
-		Gui.update_bitmap(app.overlay_gui, app.overlay_bitmap, app.overlay_material,
-						  Vector2.create(0,0), 10, Vector2.create(res[0],res[1]))
+		if ( test_rect ) {
+			Gui.update_rect(app.overlay_gui, app.overlay_rect,
+							Vector2.create(0,0), 0,
+							Vector2.create(res[0],res[1]),
+							Vector4.create(200,0,0,255))
+		} else if ( test_webview_2d ) {
+			WebView.render(app.overlay_view);
+
+			Gui.update_bitmap(app.overlay_gui, app.overlay_bitmap,
+							  app.overlay_material,
+							  Vector2.create(0,0), 0,
+							  Vector2.create(res[0],res[1]))
+		}
         Application.render_world(app.world, app.camera.instance, app.viewport, app.shading_environment, app.window);
     }
 
@@ -354,8 +378,13 @@ define(require => {
      * Shutdown web app.
      */
     function shutdown() {
-		Gui.destroy_bitmap(app.overlay_gui, app.overlay_bitmap);
-		WebView.destroy(app.overlay_view);
+		if ( test_rect ) {
+			Gui.destroy_rect(app.overlay_gui, app.overlay_rect);
+		} else if ( test_webview_2d ) {
+			Gui.destroy_bitmap(app.overlay_gui, app.overlay_bitmap);
+			WebView.destroy(app.overlay_view);
+		}
+
         Application.release_world(app.world);
         return quit();
     }

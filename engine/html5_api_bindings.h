@@ -563,6 +563,14 @@ inline void wrap_result(const Matrix4x4* m, CefRefPtr<CefV8Value>& retval)
 {
 	wrap_result(*m, retval);
 }
+inline void wrap_result(const CApiVector4& v, CefRefPtr<CefV8Value>& retval)
+{
+	retval = CefV8Value::CreateArray(4);
+	retval->SetValue(0, CefV8Value::CreateDouble(v.x));
+	retval->SetValue(1, CefV8Value::CreateDouble(v.y));
+	retval->SetValue(2, CefV8Value::CreateDouble(v.z));
+	retval->SetValue(3, CefV8Value::CreateDouble(v.w));
+}
 inline void wrap_result(const CApiVector3& v, CefRefPtr<CefV8Value>& retval)
 {
 	retval = CefV8Value::CreateArray(3);
