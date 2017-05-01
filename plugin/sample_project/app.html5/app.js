@@ -23,7 +23,7 @@ define(require => {
     const WebView = stingray.WebView;
 	const Gui     = stingray.Gui;
 
-	const test_webview_2d = false;
+	const test_webview_2d = true;
 	const test_rect = false;
 
     /*
@@ -56,7 +56,7 @@ define(require => {
             click: null
         }
     };
-	let web_page_url = "http://www.google.com"
+	let web_page_url = "stingray://overlay/overlay.html"
 	let web_view_material_resource_name = "html5_resources/web_view_2d"
     const Button = {
         Mouse: {
