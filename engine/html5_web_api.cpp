@@ -43,7 +43,7 @@ void bind_api_web_view(CefRefPtr<CefV8Value> stingray_ns)
 	});
 
 	bind_api(ns, "create", [](const CefV8ValueList& args)
-    {
+	{
 		CefRefPtr<CefV8Value> retval = CefV8Value::CreateObject(nullptr, nullptr);
 		MaterialPtr material = get_arg<MaterialPtr>(args,2);
 		WindowPtr   window   = get_arg<WindowPtr>(args,1);
@@ -57,9 +57,9 @@ void bind_api_web_view(CefRefPtr<CefV8Value> stingray_ns)
 			retval->SetUserData( view );
 		}
 		return retval;
-    });
+	});
 	bind_api(ns, "render", [](const CefV8ValueList& args)
-    {
+	{
 		if ( args.size() != 1 || !args[0]->IsValid() ||
 			 !args[0]->IsObject() || !args[0]->IsUserCreated() ) {
 			throw std::exception("Argument must be a WebView");
@@ -73,7 +73,7 @@ void bind_api_web_view(CefRefPtr<CefV8Value> stingray_ns)
 		return CefV8Value::CreateUndefined();
 	});
 	bind_api(ns, "destroy", [](const CefV8ValueList& args)
-    {
+	{
 		if ( args.size() != 1 || !args[0]->IsValid() ||
 			 !args[0]->IsObject() || !args[0]->IsUserCreated() ) {
 			throw std::exception("Argument must be a WebView");

@@ -34,7 +34,7 @@ void bind_api_gui(CefRefPtr<CefV8Value> stingray_ns, const GuiCApi* api)
 		return CefV8Value::CreateUndefined();
 	});
 	bind_api(ns, "resolution", [](const CefV8ValueList &args)
-    {
+	{
 		unsigned int out_width;
 		unsigned int out_height;
 		stingray::api::script->Gui->resolution( get_arg<ViewportPtr>(args,0),
