@@ -19,7 +19,7 @@ void bind_api(CefRefPtr<CefV8Value> stingray_ns)
 	bind_api_camera(stingray_ns, stingray::api::script->Camera);
 	bind_api_window(stingray_ns, stingray::api::script->Window);
 	bind_api_level(stingray_ns, stingray::api::script->Level);
-
+	bind_api_gui(stingray_ns, stingray::api::script->Gui);
 	/* TODO
 	 struct DynamicScriptDataCApi* DynamicScriptData;
 
@@ -32,7 +32,6 @@ void bind_api(CefRefPtr<CefV8Value> stingray_ns)
 	struct UtilitiesCApi* Utilities;
 	struct EntityCApi* Entity;
 	struct LineObjectCApi* LineObject;
-	struct GuiCApi* Gui;
 	struct PhysicsWorldCApi* PhysicsWorld;
 	struct ActorCApi* Actor;
 	struct MoverCApi* Mover;
