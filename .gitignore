@@ -12,6 +12,12 @@ SRV/
 assets/
 /*/*_intermediate_*/
 /*/*/*_intermediate_*/
+node_modules/
+
+# Generated editor components
+
+plugin/*.js
+plugin/*.map
 
 # File patterns
 
@@ -75,6 +81,8 @@ make_args.txt
 *~
 
 # Visual Studio Code config
+.vscodeignore
+.vscode
 .settings
 jsconfig.json
 .vs/

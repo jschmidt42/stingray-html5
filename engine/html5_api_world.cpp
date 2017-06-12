@@ -62,8 +62,8 @@ void bind_api_world(CefRefPtr<CefV8Value> stingray_ns, const WorldCApi* api)
 	
 	BIND_API(physics_world);
 
-	BIND_API(create_video_player);
-	BIND_API(destroy_video_player);
+	//BIND_API(create_video_player);
+	//BIND_API(destroy_video_player);
 
 	BIND_API(debug_camera_pose);
 

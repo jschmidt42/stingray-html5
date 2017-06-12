@@ -99,6 +99,15 @@ struct Node {
 	// every time we want to know whether the transform is mirrored or not.
 	// NOTE: we neither serialize this information but compute it from local once read.
 	bool has_local_mirroring;
+
+	void swap(Node &o) {
+		parent.swap(o.parent);
+		children.swap(o.children);
+		std::swap(local, o.local);
+		geometries.swap(o.geometries);
+		std::swap(viewport_visible, o.viewport_visible);
+		std::swap(has_local_mirroring, o.has_local_mirroring);
+	}
 };
 
 // Structure that represents mesh topology
@@ -395,6 +404,7 @@ struct SceneImportOptions {
 		skip_lights(false),
 		skip_cameras(false),
 		create_missing_uvs(false),
+		bake_scale(false),
 		tangents(TANGENTS_IMPORT)
 	{ }
 
@@ -408,6 +418,7 @@ struct SceneImportOptions {
 	bool skip_lights;
 	bool skip_cameras;
 	bool create_missing_uvs;
+	bool bake_scale;
 	TangentsOption tangents;
 };
 
@@ -478,4 +489,3 @@ struct SceneDatabase {
 }
 
 #include "scene_tree.inl"
-
