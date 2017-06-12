@@ -80,12 +80,5 @@ make_args.txt
 *.DS_Store
 *~
 
-# Visual Studio Code config
-.vscodeignore
-.vscode
-.settings
-jsconfig.json
-.vs/
-
 # Webstorm project folder
 .idea/
