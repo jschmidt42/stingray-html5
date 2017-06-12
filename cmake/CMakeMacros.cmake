@@ -472,9 +472,6 @@ endmacro()
 
 macro(set_plugin_runtime_output_directory target_name target_folder)
 	if (PLATFORM_WINDOWS)
-		# Safely clean out previously built dlls and copy them to the engine plugin folder - for hot reloading of plugins
-		# PLUGIN CUSTOM CHANGE
-		add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD COMMAND ${REPOSITORY_DIR}/tools/hot-reload-post-link.bat ARGS "$(OutDir)" "${target_folder}" "${target_name}")
 		# Workaround for using the correct path in manifest generation
 		set_target_properties(${PROJECT_NAME} PROPERTIES PLUGIN_DLL_FILEPATH "${target_folder}/${target_name}.dll")
 		# PLUGIN CUSTOM CHANGE

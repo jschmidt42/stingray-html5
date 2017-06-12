@@ -28,6 +28,9 @@
         "**/build": true,
         "**/binaries": true,
         "**/node_modules": true,
-        "**/.stingray-asset-server-directory": true
+        "**/.stingray-asset-server-directory": true,
+
+        "plugin/*.js": true,
+        "plugin/*.map": true
     }
 }
