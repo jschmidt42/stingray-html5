@@ -1,4 +1,5 @@
 
+art_directory = "."
 data_directory = "../../build/sample_project_data"
 default_startup_level = "levels/sample"
 description = "Create a sample project that demonstrates the usages of the Stingray HTML5 plugin."
@@ -11,9 +12,15 @@ migrations = {
 		]
 		version = "1.8.0"
 	}
+	"level-flow-editor" = {
+		patches = [
+			"347e4fc5-db57-4c84-94a6-bf93a2b89c0b"
+		]
+		version = "1.10.0"
+	}
 }
 name = "HTML5"
 reverse_forward_axis = true
 source_directory = "./"
 thumbnail = "thumbnail.png"
-version = "1.9.0.0"
+version = "1.10.0.0"

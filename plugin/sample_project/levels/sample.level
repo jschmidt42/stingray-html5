@@ -12,29 +12,21 @@ editor_metadata = {
 		}
 	]
 	Flow = {
-		Connections = [
-		]
-		Groups = [
-		]
-		Nodes = [
-		]
+		Connections = []
+		Groups = []
+		Nodes = []
 	}
-	Groups = [
-	]
+	Groups = []
 	Layers = [
 		"Default"
 		"Background"
 	]
 	LevelObjectSets = {
-		NestedSetNamesBySetName = {
-		}
-		ObjectIdsBySetName = {
-		}
-		VisibleSetNames = [
-		]
+		NestedSetNamesBySetName = {}
+		ObjectIdsBySetName = {}
+		VisibleSetNames = []
 	}
-	LevelReferences = [
-	]
+	LevelReferences = []
 	LightBakeSettings = {
 		Baker = "Stingray"
 		DiffuseBoost = 1
@@ -43,8 +35,7 @@ editor_metadata = {
 			Y = 1
 			Z = 1
 		}
-		ExcludedObjectSets = [
-		]
+		ExcludedObjectSets = []
 		FilterGain = 20
 		FilterLightmaps = true
 		FilterType = "Both"
@@ -54,8 +45,7 @@ editor_metadata = {
 			Y = 1
 			Z = 1
 		}
-		Layers = [
-		]
+		Layers = []
 		LightmapType = "Standard"
 		MaxSamples = 16
 		MinSamples = 4
@@ -69,56 +59,38 @@ editor_metadata = {
 		TotalPasses = 64
 		Variance = 0.5
 	}
-	Navmeshes = [
-	]
-	Notes = [
-	]
-	ParticleEffects = [
-	]
-	PositionMarkers = [
-	]
-	Prototypes = [
-	]
+	Navmeshes = []
+	Notes = []
+	ParticleEffects = []
+	PositionMarkers = []
+	Prototypes = []
 	Scatter = {
-		PoolSettings = {
-		}
-		ScatterData = {
-		}
+		PoolSettings = {}
+		ScatterData = {}
 	}
 	Settings = {
 		FrozenLayers = [
 			"Background"
 		]
-		HiddenLayers = [
-		]
-		HiddenObjects = [
-		]
-		LastHiddenObjects = [
-		]
+		HiddenLayers = []
+		HiddenObjects = []
+		LastHiddenObjects = []
 		SoundEnvironment = ""
 		TimpaniSoundEnvironment = "default"
 	}
-	Sounds = [
-	]
-	Splines = [
-	]
-	Stories = [
-	]
-	Triggers = [
-	]
+	Sounds = []
+	Splines = []
+	Stories = []
+	Triggers = []
 	Units = [
 		{
-			Cameras = {
-			}
+			Cameras = {}
 			Id = "62b73db4-dd05-4f5c-bc9d-0dc9e1c02217"
 			Layer = "Background"
-			Lights = {
-			}
-			Materials = {
-			}
+			Lights = {}
+			Materials = {}
 			Name = "Skydome"
-			OverridePoses = {
-			}
+			OverridePoses = {}
 			Pivot = {
 				X = 0
 				Y = 0
@@ -140,22 +112,17 @@ editor_metadata = {
 				Y = 1
 				Z = 1
 			}
-			ScriptData = {
-			}
+			ScriptData = {}
 			Type = "core/editor_slave/units/skydome/skydome"
 		}
 		{
-			Cameras = {
-			}
+			Cameras = {}
 			Id = "3e5c9e84-5176-4c22-bd43-563b4b3532d3"
 			Layer = "Default"
-			Lights = {
-			}
-			Materials = {
-			}
+			Lights = {}
+			Materials = {}
 			Name = "plane_primitive"
-			OverridePoses = {
-			}
+			OverridePoses = {}
 			Pivot = {
 				X = 0
 				Y = 0
@@ -177,31 +144,26 @@ editor_metadata = {
 				Y = 500
 				Z = 1
 			}
-			ScriptData = {
-			}
+			ScriptData = {}
 			Type = "core/units/primitives/plane_primitive"
 		}
 		{
-			Cameras = {
-			}
+			Cameras = {}
 			Id = "4516693d-5afa-4c47-8a02-190cadaf1c23"
 			Layer = "Default"
-			Lights = {
-			}
-			Materials = {
-			}
+			Lights = {}
+			Materials = {}
 			Name = "stingray_web_browser"
-			OverridePoses = {
-			}
+			OverridePoses = {}
 			Pivot = {
 				X = 0
 				Y = 0
 				Z = 0
 			}
 			Pos = {
-				X = -2.49792909622192
-				Y = 7.51559257507324
-				Z = 4.64934730529785
+				X = -2.49793
+				Y = 7.51559
+				Z = 4.64935
 			}
 			Rot = {
 				W = -1
@@ -221,26 +183,22 @@ editor_metadata = {
 			Type = "html5_resources/browser"
 		}
 		{
-			Cameras = {
-			}
+			Cameras = {}
 			Id = "f6df310d-6ccb-4d6c-a07a-e74cd606772a"
 			Layer = "Default"
-			Lights = {
-			}
-			Materials = {
-			}
+			Lights = {}
+			Materials = {}
 			Name = "basic_web_browser"
-			OverridePoses = {
-			}
+			OverridePoses = {}
 			Pivot = {
 				X = 0
 				Y = 0
 				Z = 0
 			}
 			Pos = {
-				X = 2.9428825378418
-				Y = 7.51559257507324
-				Z = 4.70011472702026
+				X = 2.94288
+				Y = 7.51559
+				Z = 4.70011
 			}
 			Rot = {
 				W = -1
@@ -260,8 +218,7 @@ editor_metadata = {
 			Type = "html5_resources/browser"
 		}
 	]
-	Volumes = [
-	]
+	Volumes = []
 }
 entities = [
 	{
@@ -275,46 +232,31 @@ entities = [
 ]
 entity_version = "0.2.0"
 flow = {
-	nodes = [
-	]
+	nodes = []
 }
-level_references = [
-]
+level_references = []
 level_settings = {
 	num_background_units = 0
 	sound_environment = ""
 	timpani_sound_environment = "default"
 }
-navmeshes = [
-]
-object_sets = {
-}
-particle_effects = [
-]
-prototypes = [
-]
-scatter = [
-]
-sounds = [
-]
-splines = [
-]
-stories = [
-]
-triggers = [
-]
+navmeshes = []
+object_sets = {}
+particle_effects = []
+prototypes = []
+scatter = []
+sounds = []
+splines = []
+stories = []
+triggers = []
 units = [
 	{
-		cameras = {
-		}
-		data = {
-		}
+		cameras = {}
+		data = {}
 		id = "62b73db4-dd05-4f5c-bc9d-0dc9e1c02217"
-		lights = {
-		}
+		lights = {}
 		material = ""
-		materials = {
-		}
+		materials = {}
 		name = "Skydome"
 		pos = [0 0 0]
 		rot = [0 0 0 1]
@@ -322,16 +264,12 @@ units = [
 		type = "core/editor_slave/units/skydome/skydome"
 	}
 	{
-		cameras = {
-		}
-		data = {
-		}
+		cameras = {}
+		data = {}
 		id = "3e5c9e84-5176-4c22-bd43-563b4b3532d3"
-		lights = {
-		}
+		lights = {}
 		material = ""
-		materials = {
-		}
+		materials = {}
 		name = "plane_primitive"
 		pos = [0 0 0]
 		rot = [0 0 0 -1]
@@ -339,43 +277,36 @@ units = [
 		type = "core/units/primitives/plane_primitive"
 	}
 	{
-		cameras = {
-		}
+		cameras = {}
 		data = {
 			browser_material_slot_name = "html5_texture"
 			browser_url = "http://www.autodesk.com/products/stingray/overview"
 		}
 		id = "4516693d-5afa-4c47-8a02-190cadaf1c23"
-		lights = {
-		}
+		lights = {}
 		material = ""
-		materials = {
-		}
+		materials = {}
 		name = "stingray_web_browser"
-		pos = [-2.49792909622192 7.51559257507324 4.64934730529785]
+		pos = [-2.49793 7.51559 4.64935]
 		rot = [0 0 0 -1]
 		scl = [1 1 1]
 		type = "html5_resources/browser"
 	}
 	{
-		cameras = {
-		}
+		cameras = {}
 		data = {
 			browser_material_slot_name = "html5_texture"
 			browser_url = "stingray://basic/basic.html"
 		}
 		id = "f6df310d-6ccb-4d6c-a07a-e74cd606772a"
-		lights = {
-		}
+		lights = {}
 		material = ""
-		materials = {
-		}
+		materials = {}
 		name = "basic_web_browser"
-		pos = [2.9428825378418 7.51559257507324 4.70011472702026]
+		pos = [2.94288 7.51559 4.70011]
 		rot = [0 0 0 -1]
 		scl = [1 1 1]
 		type = "html5_resources/browser"
 	}
 ]
-volumes = [
-]
+volumes = []

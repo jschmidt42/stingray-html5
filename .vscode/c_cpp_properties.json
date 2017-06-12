@@ -8,7 +8,11 @@
             ],
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
-                "databaseFilename": ""
+                "databaseFilename": "",
+                "path": [
+                    "/usr/include",
+                    "/usr/local/include"
+                ]
             }
         },
         {
@@ -19,7 +23,11 @@
             ],
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
-                "databaseFilename": ""
+                "databaseFilename": "",
+                "path": [
+                    "/usr/include",
+                    "/usr/local/include"
+                ]
             }
         },
         {
@@ -31,7 +39,12 @@
             ],
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
-                "databaseFilename": ""
+                "databaseFilename": "",
+                "path": [
+                    "C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include/*",
+                    "E:/stingray-libs/cef-3.2924.1564-win64-vc14/include",
+                    "E:/stingray-libs/qt-5.8-win64-vc14/include/*"
+                ]
             }
         }
     ]
